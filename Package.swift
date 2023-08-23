@@ -7,6 +7,7 @@ let package = Package(
     name: "ComposableWizard",
     platforms: [
       .iOS(.v15),
+      .macOS(.v13)
     ],
     products: [
         .library(name: "AppMain", targets: ["AppMain"]),
