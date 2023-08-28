@@ -7,11 +7,17 @@
 
 import SwiftUI
 import FeatureA
+import ComposableArchitecture
+import ComposableNavigationTools
 
 public enum Composition {
   public static var root: some Scene {
     WindowGroup {
-      FeatureAView()
+      NavigationRoot {
+        FeatureAView(store: Store(initialState: FeatureAFeature.State(formData: .init()), reducer: {
+          FeatureAFeature()
+        }))
+      }
     }
   }
 }
